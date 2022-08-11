@@ -15,30 +15,17 @@
 
 
 // // Hepatitis Webinar Day logic
-// if (d.getDate() < 26) {
-//     $(".webinarDate").html("is happening on 26 - " + new Date("27 July 2021").toDateString());
+
+// if (d.getDate() < 21) {
+//     $(".healthQuizDate").html("is happening on " + new Date("21 July 2022").toDateString());
 // }
 
-// else if (d.getDate() === 26 || d.getDate() === 27) {
-//     $(".webinarDate").html(" is happening today starting 3pm");
-// }
-
-// else {
-//     $(".webinarDate").html(" Happened recently.");
-// }
-
-
-// // Hepatitis Day logic
-// if (d.getDate() < 28) {
-//     $(".hepDayDate").html("is happening on " + new Date("28 July 2021").toDateString());
-// }
-
-// else if (d.getDate() === 28) {
-//     $(".hepDayDate").html(" Happening today!");
+// else if (d.getDate() === 21) {
+//     $(".healthQuizDate").html(" is happening today at NMIMR, LEGON");
 // }
 
 // else {
-//     $(".hepDayDate").html(" Happened recently.");
+//     $(".healthQuizDate").html(" Happened recently.");
 // }
 
 
@@ -56,15 +43,21 @@ function scrollFunction() {
     }
 }
 
+
+
+$(".dropbtn").on("mouseover", () => {
+    dropdown();
+});
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
+
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (event) {
-    if (!event.target.matches('.dropbtn')) {
+    if (!event.target.matches('.dropbtn') ) {
         var dropdowns = document.getElementsByClassName("dropdown-content");
         var i;
         for (i = 0; i < dropdowns.length; i++) {
@@ -76,10 +69,21 @@ window.onclick = function (event) {
     }
 }
 
-$(".dropbtn").on("click", () => {
-    dropdown();
-});
 
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
 
 
 // Modal
@@ -131,21 +135,12 @@ $("#afaa").on("click", () => {
 
 // Banner
 
-$(".hepDayModalLink").on("click", () => {
-    $("#hepDayModal").fadeIn();
+$(".healthQuizModalLink").on("click", () => {
+    $("#healthQuizModal").fadeIn();
 });
 
-$("#hepDayModal").on("click", () => {
-    $("#hepDayModal").fadeOut();
-});
-
-
-$(".webinarModalLink").on("click", () => {
-    $("#webinarModal").fadeIn();
-});
-
-$("#webinarModal").on("click", () => {
-    $("#webinarModal").fadeOut();
+$("#healthQuizModal").on("click", () => {
+    $("#healthQuizModal").fadeOut();
 });
 
 

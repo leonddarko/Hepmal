@@ -15,8 +15,8 @@ app.get('/6-month-Progress-Meeting', (req, res) => {
   res.render('6-month-progress-meeting');
 });
 
-app.get('/WHD-events', (req, res) => {
-  res.render('WHD-events');
+app.get('/WHD-events-2021', (req, res) => {
+  res.render('WHD-events-2021');
 });
 
 app.listen(port, () => {
